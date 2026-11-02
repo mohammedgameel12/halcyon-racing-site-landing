@@ -1,0 +1,70 @@
+/* ==========================================================================
+   PALETTE PREVIEW — palettes.css
+   Used only by the floating palette switcher. Remove before launch
+   (see README: "Removing the palette switcher").
+   Each palette overrides the variables defined in styles.css.
+   ========================================================================== */
+
+[data-palette="racing-green"] {
+  --ink:#0e1f17; --ink-2:#2b3a32; --muted:#66756c; --line:#e3e9e5; --bg-soft:#f3f6f4;
+  --accent:#1f6b4a; --accent-dark:#17543a; --on-accent:#ffffff; --accent-on-dark:#7fc4a0;
+}
+[data-palette="crimson-charcoal"] {
+  --ink:#15161a; --ink-2:#34363d; --muted:#6b6e76; --line:#ebe8e7; --bg-soft:#f7f5f4;
+  --accent:#a3202f; --accent-dark:#7d1824; --on-accent:#ffffff; --accent-on-dark:#e5707c;
+}
+[data-palette="navy-blue"] {
+  --ink:#0a1730; --ink-2:#2a3550; --muted:#667089; --line:#e4e8ef; --bg-soft:#f3f5f9;
+  --accent:#2a56c6; --accent-dark:#1f43a0; --on-accent:#ffffff; --accent-on-dark:#8fb0ff;
+}
+[data-palette="burgundy-cream"] {
+  --ink:#2a0f17; --ink-2:#4a3139; --muted:#7d6a70; --line:#ece3d6; --bg:#fffdf9; --bg-soft:#f7f1e8;
+  --accent:#7a1f3d; --accent-dark:#5e1830; --on-accent:#ffffff; --accent-on-dark:#e0a9bb;
+}
+[data-palette="mono-champagne"] {
+  --ink:#111111; --ink-2:#3a3a3a; --muted:#717171; --line:#e6e6e6; --bg-soft:#f5f5f5;
+  --accent:#d2b98c; --accent-dark:#8a7249; --on-accent:#111111; --accent-on-dark:#d2b98c;
+}
+
+/* ---------- Floating button ---------- */
+.pal-fab {
+  position: fixed; right: 20px; bottom: 20px; z-index: 90; width: 58px; height: 58px; border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.9); background: var(--ink); color: var(--accent-on-dark);
+  display: grid; place-items: center; cursor: pointer; box-shadow: 0 8px 28px rgba(0,0,0,.28);
+  transition: transform .2s, box-shadow .2s;
+}
+.pal-fab:hover { transform: scale(1.07); box-shadow: 0 12px 34px rgba(0,0,0,.34); }
+.pal-fab svg { width: 26px; height: 26px; }
+
+/* ---------- Drawer ---------- */
+.pal-backdrop { position: fixed; inset: 0; z-index: 95; background: rgba(8,10,14,.45); opacity: 0; pointer-events: none; transition: opacity .3s; }
+.pal-backdrop.open { opacity: 1; pointer-events: auto; }
+.pal-drawer {
+  position: fixed; top: 0; right: 0; bottom: 0; z-index: 100; width: min(380px, 100vw);
+  background: #fff; color: #1b1f27; display: flex; flex-direction: column;
+  box-shadow: -12px 0 40px rgba(0,0,0,.22); transform: translateX(104%); transition: transform .35s cubic-bezier(.2,.8,.2,1);
+  font-family: var(--font-body);
+}
+.pal-drawer.open { transform: none; }
+.pal-head { display: flex; align-items: center; justify-content: space-between; padding: 22px 24px 16px; border-bottom: 1px solid #e8e9ec; }
+.pal-head h2 { font-family: var(--font-head); font-size: 1.15rem; margin: 0; color: #0d1117; letter-spacing: -.01em; }
+.pal-head p { margin: 2px 0 0; font-size: .8rem; color: #667085; }
+.pal-close { background: none; border: 0; font-size: 1.8rem; line-height: 1; cursor: pointer; color: #0d1117; padding: 4px 8px; }
+.pal-list { flex: 1; overflow-y: auto; padding: 16px 20px; display: grid; gap: 12px; align-content: start; }
+.pal-opt {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center; text-align: left;
+  width: 100%; padding: 14px 16px; background: #fff; border: 1px solid #dfe2e7; border-radius: 6px;
+  cursor: pointer; font: inherit; color: inherit; transition: border-color .2s, box-shadow .2s;
+}
+.pal-opt:hover { border-color: #9aa1ad; }
+.pal-opt[aria-checked="true"] { border-color: #0d1117; box-shadow: 0 0 0 1px #0d1117; }
+.pal-sw { display: flex; }
+.pal-sw i { width: 26px; height: 26px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.12); margin-left: -8px; }
+.pal-sw i:first-child { margin-left: 0; }
+.pal-name { font-weight: 600; font-size: .95rem; color: #0d1117; display: block; }
+.pal-note { font-size: .78rem; color: #667085; }
+.pal-check { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid #c3c8d0; display: grid; place-items: center; }
+.pal-opt[aria-checked="true"] .pal-check { background: #0d1117; border-color: #0d1117; }
+.pal-opt[aria-checked="true"] .pal-check::after { content: ""; width: 6px; height: 10px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg) translate(-1px,-1px); }
+.pal-foot { padding: 14px 24px 20px; border-top: 1px solid #e8e9ec; font-size: .76rem; color: #667085; line-height: 1.5; }
+@media (prefers-reduced-motion: reduce) { .pal-drawer, .pal-backdrop, .pal-fab { transition: none; } }

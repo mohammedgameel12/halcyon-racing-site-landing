@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enquire to Join | Halcyon Racing Syndicate</title>
+  <meta name="description" content="Enquire to join Halcyon Racing. Leave your name, email and phone number and we'll be in touch personally. No obligation.">
+  <link rel="canonical" href="https://www.yourdomain.com/contact.html">
+  <meta name="theme-color" content="#0d1117">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Enquire to Join | Halcyon Racing Syndicate">
+  <meta property="og:description" content="Leave your details and we'll be in touch personally.">
+  <meta property="og:url" content="https://www.yourdomain.com/contact.html">
+  <meta property="og:image" content="https://www.yourdomain.com/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <!-- PALETTE-PREVIEW (remove these 2 lines before launch) -->
+  <link rel="stylesheet" href="palettes.css">
+  <script>try{var p=localStorage.getItem("halcyon-palette");if(p&&p!=="gold-midnight")document.documentElement.setAttribute("data-palette",p)}catch(e){}</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html" aria-label="Halcyon Racing home"><img src="images/logo.svg" alt="Halcyon Racing" width="160" height="34"></a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a class="btn btn--sm" href="contact.html">Enquire to Join</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="eyebrow">Enquire to join</span>
+        <h1>Let’s talk about your <em>first horse.</em></h1>
+        <p>Leave your details below. We’ll get back to you personally, usually within one working day.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap contact">
+        <!--
+          FORM SETUP: replace YOUR_FORM_ID with your Formspree form ID (see README.md, step 3).
+          Submissions are emailed straight to your inbox.
+        -->
+        <form class="form" id="enquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <div class="field"><label for="name">Full name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+          <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_subject" value="New syndicate enquiry (website)">
+          <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+          <button class="btn" type="submit">Enquire to Join →</button>
+          <p class="form-note">We’ll only use your details to respond to your enquiry. No obligation.</p>
+        </form>
+
+        <aside class="aside">
+          <h3>What happens next</h3>
+          <ul class="ticks">
+            <li>We’ll contact you personally within one working day.</li>
+            <li>We’ll introduce our horses, trainers and available shares.</li>
+            <li>You decide, with no pressure and no obligation.</li>
+          </ul>
+          <h3>Prefer to email?</h3>
+          <p><a class="link-arrow" href="mailto:hello@yourdomain.com">hello@yourdomain.com</a></p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div><img src="images/logo.svg" alt="Halcyon Racing" width="160" height="32" loading="lazy"><p>A thoroughbred racing syndicate for owners who love the sport.</p></div>
+        <div><h4>Explore</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+        <div><h4>Get in touch</h4><a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a></div>
+      </div>
+      <p class="legal">© <span id="y">2026</span> Halcyon Racing. Racehorse ownership carries financial risk and returns are not guaranteed. Participation in a racing syndicate should be considered a leisure expense. [Add your company registration, regulatory and privacy policy details here.]</p>
+    </div>
+  </footer>
+  <script src="script.js" defer></script>
+  <!-- PALETTE-PREVIEW (remove before launch) -->
+  <script src="palette-switcher.js"></script>
+</body>
+</html>
